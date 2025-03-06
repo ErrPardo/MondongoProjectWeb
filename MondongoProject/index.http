@@ -140,9 +140,32 @@ Content-Type: application/json
   "role":["admin"]
     
 }
-//
-//eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2M5NzdlZDFhNzA0NDVjNWI0Yjg0ZmQiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQxMjU2Njg1LCJleHAiOjE3NDEyNjM4ODV9.DuIoeNXdNC4D3wL_2tJaGMfDbnfVwbnLnYPgnX623fY
+//eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2M5YzY5NGRiNjU4NWY5YjZjZTdjYTIiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQxMjc2ODIwLCJleHAiOjE3NDEyODQwMjB9.F3JI8qs8FK4tN4HQYkIdQ1-E9LZPk6t-ZcKY7A6sN-U
 ###
 GET http://localhost:3000/users
 api_key: e66de3254520fd4eef5c
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2M5ODg2ODJkMjY0MmM5ZTcxNTE0N2QiLCJyb2xlIjpbImFkbWluIl0sImlhdCI6MTc0MTI2MDkwNCwiZXhwIjoxNzQxMjY4MTA0fQ.AuJ-9nf3dGNiKoWF8wUHvkaLGdG2LQPKT581f7F1dKg
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2M5YzY2NWRiNjU4NWY5YjZjZTdjOWUiLCJyb2xlIjpbImFkbWluIl0sImlhdCI6MTc0MTI3Njc3MywiZXhwIjoxNzQxMjgzOTczfQ.Pofz3qCxzaACczQfYprA8MuRBM83l7w23zd1QUQnwJY
+###
+
+PUT http://localhost:3000/users/email@gmail.com
+api_key: e66de3254520fd4eef5c
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2M5YzY2NWRiNjU4NWY5YjZjZTdjOWUiLCJyb2xlIjpbImFkbWluIl0sImlhdCI6MTc0MTI3Njc3MywiZXhwIjoxNzQxMjgzOTczfQ.Pofz3qCxzaACczQfYprA8MuRBM83l7w23zd1QUQnwJY
+Content-Type: application/json
+
+{
+  "name":"EduardoYeah",
+  "age":21,
+  "email":"email@gmail.com",
+  "password":"Contraseña",
+  "role":["admin"]
+    
+}
+
+###
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+  "email":"email@gmail.com",
+  "password":"Contraseña"
+}

@@ -12,7 +12,9 @@ routerUsers.get('/',customHeader,authMiddleware,rolMiddleware([ 'admin' ]),getIt
 
 routerUsers.post('/',createItem)
 
-routerUsers.put('/:email',changeItem)
+//routerUsers.put('/:email',changeItem)
+
+routerUsers.put('/:email',customHeader,authMiddleware,rolMiddleware([ 'admin' ]),changeItem)
 
 routerUsers.delete('/:email',deleteItem)
 

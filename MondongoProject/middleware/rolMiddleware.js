@@ -2,10 +2,7 @@ const rolMiddleware=(roles)=>(req,res,next)=>{
     try{
         const user=req.user
         const userRol=user.role
-        console.log(userRol)
-        console.log(roles)
         const checkRol=roles.some((roles) => userRol.includes(roles))
-        console.log(checkRol)
         if(checkRol){
             next()
         }

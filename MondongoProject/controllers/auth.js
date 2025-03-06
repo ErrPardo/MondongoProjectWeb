@@ -16,4 +16,36 @@ const createItem=async (req, res) => {
     res.send(data)
 }
 
-module.exports={createItem}
+const loginCtrl=async(req,res)=>{
+    try{
+        
+        req=matchedData(req)
+        console.log(req)
+        const user=await UserModel.findOne({email:req.email}).select("password name role email")
+        if(!user){
+            res.status(403).send("No se ha encontrado el usuario")
+        }
+        else{
+            const hashPassword=user.password
+            const check=compare(req.password,hashPassword)
+            if(!check){
+                res.satus(403).send("Error en la comprobacion de la contraseña")
+            }
+            else{
+                user.set('password', undefined, { strict: false })
+                const data = {
+                    token: await tokenSign(user),
+                    user: user
+                }
+                res.send(data)
+            }
+        }
+    }catch(e){
+        console.log(e)
+        res.status(500).send("Error en la peticion")
+    }
+    
+
+}
+
+module.exports={createItem,loginCtrl}
