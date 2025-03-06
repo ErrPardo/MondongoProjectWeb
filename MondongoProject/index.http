@@ -1,0 +1,148 @@
+GET http://localhost:3000/users
+api_key: e66de3254520fd4eef5c
+
+
+###
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+    "name":"Eduardo",
+    "age":21,
+    "email":"email",
+    "password":"Contraseña"
+    
+}
+
+###
+PUT http://localhost:3000/users/email
+Content-Type: application/json
+
+{
+    "name":"EduardoYeah",
+    "age":21,
+    "email":"email",
+    "password":"Contraseña"
+    
+}
+###
+DELETE http://localhost:3000/users/email
+
+###
+POST http://localhost:3000/storage
+Content-Type: application/json
+
+{
+    "url":"https://url",
+    "filename":"fichero"
+}
+
+###
+GET http://localhost:3000/storage
+###
+PUT http://localhost:3000/storage/67b59d96fcdd1b5da3de5b51
+Content-Type: application/json
+
+{
+    "url":"https://url2",
+    "filename":"fichero2"
+    
+}
+###
+DELETE http://localhost:3000/storage/67b59c906a0b0fc424c95732
+
+###
+POST http://localhost:3000/storage HTTP/1.1
+Content-Type: multipart/form-data; boundary=boundary123
+
+--boundary123
+Content-Disposition: form-data; name="image"; filename="image.png"
+Content-Type: image/png
+
+< ./image.png
+--boundary123--
+
+
+###
+POST http://localhost:3000/track
+Content-Type: application/json
+
+{
+  "name": "Song Title",
+  "album": "Album Name",
+  "artist": {
+    "name": "Artist Name"
+  },
+  "duration": {
+    "start": 0,
+    "end": 240
+  },
+  "mediaId": "65f4c9a2b8e1c9d4f5a6b7c8"
+}
+###
+POST http://localhost:3000/track
+Content-Type: application/json
+
+{
+  "name": "Song Title",
+  "album": "Album Name",
+  "cover": "https://example.com/cover.jpg",
+  "artist": {
+    "name": "Artist Name"
+  },
+  "duration": {
+    "start": 0,
+    "end": 240
+  },
+  "mediaId": "65f4c9a2b8e1c9d4f5a6b7c8",
+  "Nicolaila":"hola"
+}
+###
+GET http://localhost:3000/track
+api_key: e66de3254520fd4eef5c
+###
+
+PUT http://localhost:3000/track/67c0460e28011dcfc3130ef5
+Content-Type: application/json
+
+{
+  "name": "Song Title",
+  "album": "Nuevo album",
+  "cover": "https://example.com/cover.jpg",
+  "artist": {
+    "name": "Yeah"
+  },
+  "duration": {
+    "start": 0,
+    "end": 240
+  },
+  "mediaId": "65f4c9a2b8e1c9d4f5a6b7c8"
+}
+###
+DELETE http://localhost:3000/track/67c809b3323ca77a8db04ca6
+###
+
+PATCH http://localhost:3000/track/67c0460e28011dcfc3130ef5
+Content-Type: application/json
+
+{
+  "album":"Album Nocturno"
+}
+###
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+  "name":"Nicolas",
+  "age":21,
+  "email":"email123@gmail.com",
+  "password":"Contraseña",
+  "role":["admin"]
+    
+}
+//
+//eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2M5NzdlZDFhNzA0NDVjNWI0Yjg0ZmQiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQxMjU2Njg1LCJleHAiOjE3NDEyNjM4ODV9.DuIoeNXdNC4D3wL_2tJaGMfDbnfVwbnLnYPgnX623fY
+###
+GET http://localhost:3000/users
+api_key: e66de3254520fd4eef5c
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2M5ODg2ODJkMjY0MmM5ZTcxNTE0N2QiLCJyb2xlIjpbImFkbWluIl0sImlhdCI6MTc0MTI2MDkwNCwiZXhwIjoxNzQxMjY4MTA0fQ.AuJ-9nf3dGNiKoWF8wUHvkaLGdG2LQPKT581f7F1dKg
